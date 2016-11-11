@@ -1,5 +1,5 @@
 # DnD-Character-Creator
-A program to help you create a character for Dungeons and Dragons. It outputs a PDF file with all the information of your character. 
+A program to help you create a character for Dungeons and Dragons. It outputs a PDF file with all the information of your character. Currently only handles character name, character race, and player name. Rest of character features under developement.
 
 ## Setting up the Eclipse project
 Clone git repository to local computer using the following command:
