@@ -21,7 +21,15 @@ You can now run the DndCharacterCreator.java file to create your character or wo
 Characters created using Eclipse will be output with the "Character Sheets" folder in the "Dnd-Character-Creator" folder (the current working folder) not in the "Exe Builds" folder.
 
 ## To Run the executable and Not download the files
-Copy the "Exe Builds" folder and place it wherever you like. 
+Downlad the project as a .zip file and move the "Exe Builds" folder wherever you like. 
 > NOTE: You need everything inside the folder for it to work properly. Do not move the "Dnd Character Creator.exe" file to outside the folder as it won't be able to access and create your pdf file for your character. You may however create a shortcut to the "Dnd Character Creator.exe" file. 
 
 Characters created using the "Dnd Character Creator.exe" file will be output as a PDF in the "Character Sheets" folder within the "Exe Builds" folder.
+
+
+
+
+# Programs and Libraries Used
+* iText 7 - handling PDFs
+* Launch4j - converting .jar file to .exe file
+* Eclipse - Java IDE 
