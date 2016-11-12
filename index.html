@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dnd 5e Character Creator by nowlenaustin</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/nowlenaustin/DnD-Character-Creator">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/nowlenaustin/DnD-Character-Creator/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/nowlenaustin/DnD-Character-Creator/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Dnd 5e Character Creator</h1>
+          <p>A program to help you create a character for 5th Edition Dungeons and Dragons</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/nowlenaustin">nowlenaustin</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="dnd-character-creator" class="anchor" href="#dnd-character-creator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DnD-Character-Creator</h1>
+
+<p>A program to help you create a character for 5th Edition Dungeons and Dragons. It outputs a PDF file with all the information of your character. <strong>Currently only handles character name, character race, and player name. Rest of character features under developement.</strong></p>
+
+<h2>
+<a id="setting-up-the-eclipse-project" class="anchor" href="#setting-up-the-eclipse-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting up the Eclipse project</h2>
+
+<p>Clone git repository to local computer using the following command:</p>
+
+<blockquote>
+<p>git clone <a href="https://github.com/nowlenaustin/DnD-Character-Creator.git">https://github.com/nowlenaustin/DnD-Character-Creator.git</a></p>
+</blockquote>
+
+<p>Open Eclipse. Import the project into Eclipse with the following steps:</p>
+
+<blockquote>
+<p>click "File" &gt; click "Open Projects from File System" &gt; click "Directory" &gt; navigate to where your git repository is &gt; click "Ok" &gt; click "Finish"</p>
+</blockquote>
+
+<p>Download iText 7 from the following link and unzip it (download the .zip file):</p>
+
+<blockquote>
+<p><a href="https://github.com/itext/itext7/releases/tag/7.0.1">https://github.com/itext/itext7/releases/tag/7.0.1</a></p>
+</blockquote>
+
+<p>Or click this link for a direct download of the .zip file: </p>
+
+<blockquote>
+<p><a href="https://github.com/itext/itext7/releases/download/7.0.1/itext7-7.0.1.zip">https://github.com/itext/itext7/releases/download/7.0.1/itext7-7.0.1.zip</a></p>
+</blockquote>
+
+<p>Once iText 7 is unzipped got back to Eclipse and follow these steps:</p>
+
+<blockquote>
+<p>right click on the DnD-Character-Creator project &gt; hover over "Build Path" &gt; click "Add  External Archives" &gt; navigate to the folder created when unzipping iText 7 &gt; select everything &gt; click "Open"</p>
+</blockquote>
+
+<p>You can now run the DndCharacterCreator.java file to create your character or work on the project. 
+Characters created using Eclipse will be output with the "Character Sheets" folder in the "Dnd-Character-Creator" folder (the current working folder) not in the "Exe Builds" folder.</p>
+
+<h2>
+<a id="to-run-the-executable-and-not-download-the-files" class="anchor" href="#to-run-the-executable-and-not-download-the-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To Run the executable and Not download the files</h2>
+
+<p>Click <a href="https://github.com/nowlenaustin/DnD-Character-Creator/raw/master/Prototype.zip">here</a> link to download the current prototype and move the "Exe Builds" folder wherever you like. </p>
+
+<blockquote>
+<p>NOTE: You need everything inside the folder for it to work properly. Do not move the "Dnd Character Creator.exe" file to outside the folder as it won't be able to access and create your pdf file for your character. You may however create a shortcut to the "Dnd Character Creator.exe" file. </p>
+</blockquote>
+
+<p>Characters created using the "Dnd Character Creator.exe" file will be output as a PDF in the "Character Sheets" folder within the "Exe Builds" folder.</p>
+
+<h1>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributors</h1>
+
+<ul>
+<li><a href="https://github.com/nowlenaustin" class="user-mention">@nowlenaustin</a></li>
+<li><a href="https://github.com/dogboy357" class="user-mention">@dogboy357</a></li>
+</ul>
+
+<h1>
+<a id="programs-and-libraries-used" class="anchor" href="#programs-and-libraries-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Programs and Libraries Used</h1>
+
+<h3>
+<a id="programs" class="anchor" href="#programs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Programs</h3>
+
+<ul>
+<li>Launch4j - converting .jar file to .exe file</li>
+<li>Eclipse - Java IDE</li>
+</ul>
+
+<h3>
+<a id="libraries" class="anchor" href="#libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Libraries</h3>
+
+<ul>
+<li>iText 7 - handling PDFs </li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
