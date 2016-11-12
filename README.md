@@ -30,6 +30,9 @@ Characters created using the "Dnd Character Creator.exe" file will be output as 
 
 
 # Programs and Libraries Used
-* iText 7 - handling PDFs
+### Programs
 * Launch4j - converting .jar file to .exe file
-* Eclipse - Java IDE 
+* Eclipse - Java IDE
+
+### Libraries
+* iText 7 - handling PDFs 
