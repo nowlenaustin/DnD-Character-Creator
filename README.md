@@ -1,6 +1,12 @@
 # DnD-Character-Creator
 A program to help you create a character for 5th Edition Dungeons and Dragons. It outputs a PDF file with all the information of your character. __Currently only handles character name, character race, and player name. Rest of character features under developement.__
 
+## To Run the executable and Not download the files
+Click [here](https://github.com/nowlenaustin/DnD-Character-Creator/raw/master/Prototype.zip) link to download the current prototype and move the "Exe Builds" folder wherever you like. 
+> NOTE: You need everything inside the folder for it to work properly. Do not move the "Dnd Character Creator.exe" file to outside the folder as it won't be able to access and create your pdf file for your character. You may however create a shortcut to the "Dnd Character Creator.exe" file. 
+
+Characters created using the "Dnd Character Creator.exe" file will be output as a PDF in the "Character Sheets" folder within the "Exe Builds" folder.
+
 ## Setting up the Eclipse project
 Clone git repository to local computer using the following command:
 > git clone https://github.com/nowlenaustin/DnD-Character-Creator.git
@@ -20,13 +26,9 @@ Once iText 7 is unzipped got back to Eclipse and follow these steps:
 You can now run the DndCharacterCreator.java file to create your character or work on the project. 
 Characters created using Eclipse will be output with the "Character Sheets" folder in the "Dnd-Character-Creator" folder (the current working folder) not in the "Exe Builds" folder.
 
-## To Run the executable and Not download the files
-Downlad the project as a .zip file and move the "Exe Builds" folder wherever you like. 
-> NOTE: You need everything inside the folder for it to work properly. Do not move the "Dnd Character Creator.exe" file to outside the folder as it won't be able to access and create your pdf file for your character. You may however create a shortcut to the "Dnd Character Creator.exe" file. 
-
-Characters created using the "Dnd Character Creator.exe" file will be output as a PDF in the "Character Sheets" folder within the "Exe Builds" folder.
-
-
+# Contributors
+* @nowlenaustin
+* @dogboy357
 
 
 # Programs and Libraries Used
