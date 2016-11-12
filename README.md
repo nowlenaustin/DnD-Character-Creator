@@ -1,5 +1,7 @@
 # DnD-Character-Creator
-A program to help you create a character for 5th Edition Dungeons and Dragons. It outputs a PDF file with all the information of your character. __Currently only handles character name, character race, and player name. Rest of character features under developement.__
+A program to help you create a character for 5th Edition Dungeons and Dragons. It outputs a PDF file with all the information of your character. __Currently only supports the following: character name, character race, character class, character level, player name. The rest of the character features are under development.__
+
+[GitHub website page](https://nowlenaustin.github.io/DnD-Character-Creator/) 
 
 ## To Run the executable and Not download the files
 Click [here](https://github.com/nowlenaustin/DnD-Character-Creator/raw/master/Prototype.zip) link to download the current prototype and move the "Exe Builds" folder wherever you like. 
