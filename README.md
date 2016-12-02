@@ -16,6 +16,8 @@ Clone git repository to local computer using the following command:
 Open Eclipse. Import the project into Eclipse with the following steps:
 > click "File" > click "Open Projects from File System" > click "Directory" > navigate to where your git repository is > click "Ok" > click "Finish"
 
+> NOTE: Make sure to complete ALL the steps in the process before building the project. Building the project before linking the iText7 library may cause the project to not build correctly and produce errors indefinitely.
+
 Download iText 7 from the following link and unzip it (download the .zip file):
 > https://github.com/itext/itext7/releases/tag/7.0.1
 
