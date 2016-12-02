@@ -11,7 +11,7 @@ Characters created using the "Dnd Character Creator.exe" file will be output as 
 
 ## Setting up the Eclipse project
 Clone git repository to local computer using the following command:
-> git clone -b <your branch name> https://github.com/nowlenaustin/DnD-Character-Creator.git
+> git clone -b [your branch name] https://github.com/nowlenaustin/DnD-Character-Creator.git
 
 Open Eclipse. Import the project into Eclipse with the following steps:
 > click "File" > click "Open Projects from File System" > click "Directory" > navigate to where your git repository is > click "Ok" > click "Finish"
