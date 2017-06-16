@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.awt.Desktop;
 
 public class DndCharacterCreator {
 	public static final String SRC = "./assets/DnD_5E_CharacterSheet - Form Fillable.pdf";
@@ -26,7 +27,7 @@ public class DndCharacterCreator {
         // Character Name
         getCharacterName();
         
-        //Character Race
+        // Character Race
         getCharacterRace();
         
         // Character Class
@@ -36,7 +37,10 @@ public class DndCharacterCreator {
         getCharacterLevel();
         
         // Create PDF
-        createPDF();
+        String pathOfPDF = createPDF();
+        
+        // Open PDF 
+        openPDF(pathOfPDF);
         
         close();
     }
@@ -149,13 +153,13 @@ public class DndCharacterCreator {
         System.out.println(""); // print empty line
     }
     
-    public static void createPDF() throws IOException{
+    public static String createPDF() throws IOException{
     	/** Takes data stored in DndCharacterCreatorformFieldsToChange and creates a PDF 
     	 * character sheet using the stored values. The PDF is stored in the DndCharacterCreator.DEST 
     	 * and is named using the character's name */
     	
         // PDF file name based off Character Name
-        DEST = DEST + formFieldsToChange.get("CharacterName") + ".pdf";
+        DEST = DEST + formFieldsToChange.get("CharacterName") + ".pdf"; // sets DEST to final destination of PDF
         File file = new File(DEST);
         file.getParentFile().mkdirs(); // create directories for file if they do not exist
         
@@ -164,6 +168,12 @@ public class DndCharacterCreator {
         System.out.println(""); // print empty line
         new formFieldEditor().manipulatePdf(SRC, DEST, formFieldsToChange);
         System.out.println("Your Character Sheet has been created! Thank you for using my program!");
+        
+        return DEST;
+    }
+    
+    public static void openPDF(String pathOfPDF) throws IOException{
+    	Desktop.getDesktop().open(new File(pathOfPDF));
     }
     
     public static void close() throws IOException{
