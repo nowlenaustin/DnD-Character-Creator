@@ -1,7 +1,5 @@
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 import java.awt.Desktop;
 
@@ -10,9 +8,9 @@ public class DndCharacterCreator {
 	public static String DEST = "./Character Sheets/";
 	public static final String RACES = "./assets/races.txt";
 	public static final String CLASSES = "./assets/classes.txt";
-	public static Map<String, String> formFieldsToChange;
 	public static Scanner userInput;
 	public static dndInfo DndInfo; // contains info needed to create characters (ie, races, classes, etc)
+    public static characterData character;
 	
 	
     public static void main(String[] args) throws IOException {
@@ -20,13 +18,13 @@ public class DndCharacterCreator {
     	
     	// setup for program
         setup();
-        
+
         // Player Name
         getPlayerName();
-    	
+
         // Character Name
         getCharacterName();
-        
+
         // Character Race
         getCharacterRace();
         
@@ -46,17 +44,18 @@ public class DndCharacterCreator {
     }
     
     public static void setup() throws IOException{
+        /** sets up DndInfo and userInput variables */
         // create list of races from file
     	DndInfo = new dndInfo(RACES, CLASSES);
-    	// form fields to be filled in on PDF
-        formFieldsToChange = new HashMap<String, String>();
         // needed to read from console input
         userInput = new Scanner(System.in);
+        // initialize characterData class
+        character = new characterData();
     }
     
     public static void getCharacterClass(){
     	/** Prompts user for their desired class for their character and stores 
-    	 * the value in the public variable DndCharacterCreator.formFieldsToChange */
+    	 * the value in the public variable character */
     	String characterClass;
         while(true){
         	// build string to print out all race options
@@ -80,12 +79,15 @@ public class DndCharacterCreator {
         		System.out.println(""); // print empty line
         	}
         }
-        
+
+        character.characterClass = characterClass;
+
         System.out.println(""); // print empty line
-        formFieldsToChange.put("ClassLevel" , characterClass);
     }
 
     public static void getCharacterLevel(){
+        /** Prompts user for their desired level for their character and stores
+         * the value in the public variable character */
     	// make sure level is a number
         String level;
         while(true){
@@ -99,26 +101,26 @@ public class DndCharacterCreator {
 				System.out.println("Please type the level as a number and not as words.");
 			}
         }
-        
-        // since ClassLevel field is class and level, retrieve current class and add level to it
-        String classLevel = formFieldsToChange.get("ClassLevel") + " " + level;
-        
+
         // store new ClassLevel with class and level 
-        formFieldsToChange.put("ClassLevel" , classLevel);
+        character.level = level;
+
         System.out.println(""); // print empty line
     }
     
     public static void getCharacterName(){
     	/** Prompts user for their desired name for their character and stores 
-    	 * the value in the public variable DndCharacterCreator.formFieldsToChange */
+    	 * the value in the public variable character */
         System.out.print("Please enter your Character's name: ");
-        formFieldsToChange.put("CharacterName" , userInput.nextLine());
+
+        character.characterName = userInput.nextLine();
+
         System.out.println(""); // print empty line
     }
     
     public static void getCharacterRace(){
     	/** Prompts user for their desired race for their character and stores 
-    	 * the value in the public variable DndCharacterCreator.formFieldsToChange */
+    	 * the value in the public variable character */
     	String race;
         while(true){
         	// build string to print out all race options
@@ -140,39 +142,46 @@ public class DndCharacterCreator {
         		System.out.println(""); // print empty line
         	}
         }
-        
+
+        character.race = race;
         System.out.println(""); // print empty line
-        formFieldsToChange.put("Race " , race);
     }
     
     public static void getPlayerName(){
     	/** Prompts user for the name they wish to be displayed on their character sheet and 
-    	 * stores the value in the public variable DndCharacterCreator.formFieldsToChange */
+    	 * stores the value in the public variable character */
         System.out.print("Please enter your Name: ");
-        formFieldsToChange.put("PlayerName" , userInput.nextLine());
+        character.playerName = userInput.nextLine();
         System.out.println(""); // print empty line
     }
     
     public static String createPDF() throws IOException{
-    	/** Takes data stored in DndCharacterCreatorformFieldsToChange and creates a PDF 
+    	/** Takes data stored in DndCharacterCreator.character and creates a PDF
     	 * character sheet using the stored values. The PDF is stored in the DndCharacterCreator.DEST 
     	 * and is named using the character's name */
     	
         // PDF file name based off Character Name
-        DEST = DEST + formFieldsToChange.get("CharacterName") + ".pdf"; // sets DEST to final destination of PDF
+        DEST = DEST + character.characterName + ".pdf"; // sets DEST to final destination of PDF
         File file = new File(DEST);
         file.getParentFile().mkdirs(); // create directories for file if they do not exist
         
         // Create PDF
         System.out.println("Making your Character Sheet. Please wait. This shouldn't take long.");
         System.out.println(""); // print empty line
-        new formFieldEditor().manipulatePdf(SRC, DEST, formFieldsToChange);
-        System.out.println("Your Character Sheet has been created! Thank you for using my program!");
+
+        try {
+            character.createPDF(SRC, DEST);
+            System.out.println("Your Character Sheet has been created! Thank you for using my program!");
+        } catch(IOException io){
+            System.out.println("Sorry something went wrong when creating your character sheet. Please contact creator of the software.");
+        }
+
         
         return DEST;
     }
     
     public static void openPDF(String pathOfPDF) throws IOException{
+        /** opens the created PDF in the default PDF viewer */
     	Desktop.getDesktop().open(new File(pathOfPDF));
     }
     
